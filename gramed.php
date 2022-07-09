@@ -49,7 +49,7 @@ function request($url, $data, $headers, $put = null)
 function regis($email, $nope, $fname, $lname, $jmlh)
 {
     $url = "https://auth.myvalue.id/v1/user/";
-    $data = '{"email":"' . $email . '","password":"viola331","mobilePhoneNumber":"' . $nope . '","mobilePhonePrefix":"+62","firstName":"' . $fname . '","lastName":"' . $lname . '","clientID":"MyValueWeb","redirect_uri":"https://www.myvalue.id/redirect","outletID":"10111"}';
+    $data = '{"email":"' . $email . '","password":"sevia123","mobilePhoneNumber":"' . $nope . '","mobilePhonePrefix":"+62","firstName":"' . $fname . '","lastName":"' . $lname . '","clientID":"MyValueWeb","redirect_uri":"https://www.myvalue.id/redirect","outletID":"10111"}';
     $headers = array();
     $headers[] = "Host: auth.myvalue.id";
     $headers[] = "Cookie: client=%7B%22client_id%22%3A%22MyValueWeb%22%2C%22redirect_uri%22%3A%22https%3A%2F%2Fwww.myvalue.id%2Fredirect%22%2C%22state%22%3A%22eNjUv67yihvE0%22%2C%22isThirdParty%22%3Afalse%7D; G_ENABLED_IDPS=google; auth_token=%7B%22access_token%22%3A%22tRumn_EEUWJM61aivf4LROP3K5C6HMzNWfT4CNlZc9s.SNtkkqGmF38hHxwfO6N9VJboVCn-P-L2rW67vEan_QA%22%2C%22refresh_token%22%3A%22uLm1FDw7t68-DKpVBgkbaAMNw4xh41KcgIAQQhVQwr0.5lffLG_CRgVcrkXeXA5rSDvBzTCu0ji3OOp4IC3gNIQ%22%2C%22token_type%22%3A%22bearer%22%2C%22expires_in%22%3A86400%2C%22refresh_expires_in%22%3A31622400%2C%22id_token%22%3A%22%22%2C%22not_before_policy%22%3A0%2C%22session_state%22%3A%22%22%2C%22expired%22%3A1657452756298%7D";
