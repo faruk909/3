@@ -113,5 +113,5 @@ for ($i = 0; $i < $brp; $i++) {
     $mail2 = "$kcl2$b@gmail.com";
     $nope = nope();
     regis($mail2, $nope, $anama, $bnama, $i);
-    sleep(second);
+    sleep(20);
 }
