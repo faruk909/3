@@ -69,7 +69,7 @@ function regis($email, $nope, $fname, $lname, $jmlh)
         $kgid = $json['kgValueID'];
         $result = "$fname $lname | $nope | $kgid \n";
         save("result.txt", $result);
-        echo "$jmlh. Berhasil => $result";
+        echo "$jmlh. colors.FgGreen. Berhasil => $result";
     } else {
         echo "gagal";
     }
