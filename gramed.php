@@ -93,7 +93,7 @@ function nope()
 }
 
 
-echo "Mau Akun brp: ";
+echo "Mau Buat Akun brp: ";
 $brp = trim(fgets(STDIN));
 
 for ($i = 0; $i < $brp; $i++) {
