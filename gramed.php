@@ -101,7 +101,7 @@ for ($i = 0; $i < $brp; $i++) {
     $hslnama = explode("\n", str_replace("\r", "", $fgcnama));
     $count = count($hslnama);
 
-    $b = rand(0, 9999);
+    $b = rand(0, 99);
     $anama = $hslnama[rand(0, $count)];
     $bnama = $hslnama[rand(0, $count)];
     $fullnama = "$anama $bnama";
