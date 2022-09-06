@@ -47,7 +47,7 @@ function request($url, $data, $headers, $put = null)
  
 function getnumber()
 {
-    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=getNumber&service=ot&operator=&country=6";
+    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=A86e55c65fcAb1936481fb915ffd5d5A&action=getNumber&service=ot&operator=&country=6";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 13);
@@ -64,7 +64,7 @@ function getnumber()
  
 function ambilotp($id)
 {
-    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=getStatus&id=$id";
+    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=A86e55c65fcAb1936481fb915ffd5d5A&action=getStatus&id=$id";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 9);
@@ -80,7 +80,7 @@ function ambilotp($id)
  
 function ambilotp2($id)
 {
-    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=getStatus&id=$id";
+    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=A86e55c65fcAb1936481fb915ffd5d5A&action=getStatus&id=$id";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 9);
@@ -93,7 +93,7 @@ function ambilotp2($id)
 }
 function retryotp($id)
 {
-    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=setStatus&status=3&id=$id";
+    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=A86e55c65fcAb1936481fb915ffd5d5A&action=setStatus&status=3&id=$id";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 16);
@@ -105,7 +105,7 @@ function retryotp($id)
  
 function suksesotp($id)
 {
-    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=setStatus&status=6&id=$id";
+    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=A86e55c65fcAb1936481fb915ffd5d5A&action=setStatus&status=6&id=$id";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 16);
@@ -117,7 +117,7 @@ function suksesotp($id)
  
 function cancleotp($id)
 {
-    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=setStatus&status=8&id=$id";
+    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=A86e55c65fcAb1936481fb915ffd5d5A&action=setStatus&status=8&id=$id";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 16);
