@@ -15,14 +15,14 @@ function request1($url, $headers, $put = null)
     curl_setopt($ch, CURLOPT_ENCODING, "GZIP");
     return curl_exec($ch);
 }
- 
+
 function save($filename, $email)
 {
     $save = fopen($filename, "a");
     fputs($save, "$email");
     fclose($save);
 }
- 
+
 function request($url, $data, $headers, $put = null)
 {
     $ch = curl_init();
@@ -44,10 +44,10 @@ function request($url, $data, $headers, $put = null)
     curl_setopt($ch, CURLOPT_ENCODING, "GZIP");
     return curl_exec($ch);
 }
- 
+
 function getnumber()
 {
-    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=0dc6b9cd7A8c3858f8595d956e1d5cc1&action=getNumber&service=ot&operator=&country=6";
+    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=getNumber&service=ot&operator=&country=6";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 13);
@@ -61,10 +61,10 @@ function getnumber()
         echo "Gagal mendapatkan nomor \n";
     }
 }
- 
+
 function ambilotp($id)
 {
-    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=0dc6b9cd7A8c3858f8595d956e1d5cc1&action=getStatus&id=$id";
+    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=getStatus&id=$id";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 9);
@@ -77,10 +77,10 @@ function ambilotp($id)
     } else {
     }
 }
- 
+
 function ambilotp2($id)
 {
-    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=0dc6b9cd7A8c3858f8595d956e1d5cc1&action=getStatus&id=$id";
+    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=getStatus&id=$id";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 9);
@@ -93,7 +93,7 @@ function ambilotp2($id)
 }
 function retryotp($id)
 {
-    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=0dc6b9cd7A8c3858f8595d956e1d5cc1&action=setStatus&status=3&id=$id";
+    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=setStatus&status=3&id=$id";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 16);
@@ -102,10 +102,10 @@ function retryotp($id)
     } else {
     }
 }
- 
+
 function suksesotp($id)
 {
-    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=0dc6b9cd7A8c3858f8595d956e1d5cc1&action=setStatus&status=6&id=$id";
+    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=setStatus&status=6&id=$id";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 16);
@@ -114,10 +114,10 @@ function suksesotp($id)
     } else {
     }
 }
- 
+
 function cancleotp($id)
 {
-    $url = "https://api.sms-activate.org/stubs/handler_api.php?api_key=0dc6b9cd7A8c3858f8595d956e1d5cc1&action=setStatus&status=8&id=$id";
+    $url = "https://smshub.org/stubs/handler_api.php?api_key=125578U6f2961ed06eb15907cba02101eb74f0c&action=setStatus&status=8&id=$id";
     $headers = array();
     $getotp = request1($url, $headers);
     $subif = substr($getotp, 0, 16);
@@ -126,7 +126,7 @@ function cancleotp($id)
     } else {
     }
 }
- 
+
 function regis($email, $nomor, $fname, $lname)
 {
     $url = "https://auth.myvalue.id/v1/user/";
@@ -155,7 +155,7 @@ function regis($email, $nomor, $fname, $lname)
         echo "gagal register";
     }
 }
- 
+
 function otp($nomor)
 {
     $url = "https://auth.myvalue.id/v1/verification/send/";
@@ -173,7 +173,7 @@ function otp($nomor)
     $json = json_decode($getotp, true);
     echo "suskes kirim otp \n";
 }
- 
+
 function inputotp($nomor, $token)
 {
     $url = "https://auth.myvalue.id/v1/verification/check/";
@@ -194,7 +194,7 @@ function inputotp($nomor, $token)
         return true;
     }
 }
- 
+
 function datareg()
 {
     $fgcnama = file_get_contents("bahannama.txt");
@@ -211,12 +211,12 @@ function datareg()
     $mail2 = "$kcl2$b@gmail.com";
     return array($anama, $bnama, $mail2);
 }
- 
+
 $total = 1;
 $ulangotp = 0;
 echo "MAU BRP: ";
 $brp = trim(fgets(STDIN));
- 
+
 ulang:
 if ($total <= $brp) {
     $data = datareg();
@@ -276,4 +276,3 @@ if ($total <= $brp) {
 } else {
     echo "berhasil bikin semua akun \n";
 }
- 
